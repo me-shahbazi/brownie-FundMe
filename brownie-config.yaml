@@ -1,0 +1,41 @@
+dotenv: .env
+
+dependencies:
+  # - <organization/repo>@<version>
+  # https://github.com/smartcontractkit/chainlink-brownie-contracts
+  - smartcontractkit/chainlink-brownie-contracts@1.3.0
+
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.3.0"
+
+wallets:
+  ganacheUI_key: ${GANACHE_KEY}
+
+networks:
+  avax-test:
+    host: https://api.avax-test.network/ext/bc/C/rpc
+    chainid: 43113
+    explorer: https://api-testnet.snowscan.io/api
+    btcusd: "0x31CF013A08c6Ac228C94551d535d5BAfE19c602a"
+    ethusd: "0x86d67c3D38D2bCeE722E601025C25a575021c6EA"
+  sepolia:
+    btcusd: "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43"
+    ethusd: "0x694AA1769357215DE4FAC081bf1f309aDC325306"
+  ganacheUI:
+    host: http://127.0.0.1
+    port: 7545
+    network_id: 1337
+  mainnet-fork:
+    btcusd: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+    ethusd: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+  mainnet-fork-INF-dev:
+    btcusd: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+    ethusd: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+  mainnet-fork-ALC-dev:
+    btcusd: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"
+    ethusd: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+
+etherscan:
+  token: ${SNOWTRACE_TOKEN}
